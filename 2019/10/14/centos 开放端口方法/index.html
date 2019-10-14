@@ -55,18 +55,18 @@
   };
 </script>
 
-  <meta name="description" content="最近在centos上部署了前端项目发现启动后无法通过ip进行访问，经查询原来是防火墙打开了，经过收集学习了相关的操作。Centos升级到7之后，内置的防火墙已经从iptables变成了firewalld。所以，端口的开启还是要从两种情况来说明的，即iptables和firewalld。">
+  <meta name="description" content="最近在centos上部署了前端项目发现启动后无法通过ip进行访问，经查询原来是防火墙打开了，经过收集学习了相关的操作。">
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="centos 开放端口方法">
 <meta property="og:url" content="http://yoursite.com/2019/10/14/centos 开放端口方法/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="最近在centos上部署了前端项目发现启动后无法通过ip进行访问，经查询原来是防火墙打开了，经过收集学习了相关的操作。Centos升级到7之后，内置的防火墙已经从iptables变成了firewalld。所以，端口的开启还是要从两种情况来说明的，即iptables和firewalld。">
+<meta property="og:description" content="最近在centos上部署了前端项目发现启动后无法通过ip进行访问，经查询原来是防火墙打开了，经过收集学习了相关的操作。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-10-14T01:45:24.186Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="centos 开放端口方法">
-<meta name="twitter:description" content="最近在centos上部署了前端项目发现启动后无法通过ip进行访问，经查询原来是防火墙打开了，经过收集学习了相关的操作。Centos升级到7之后，内置的防火墙已经从iptables变成了firewalld。所以，端口的开启还是要从两种情况来说明的，即iptables和firewalld。">
+<meta name="twitter:description" content="最近在centos上部署了前端项目发现启动后无法通过ip进行访问，经查询原来是防火墙打开了，经过收集学习了相关的操作。">
   <link rel="canonical" href="http://yoursite.com/2019/10/14/centos 开放端口方法/">
 
 
@@ -335,8 +335,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>最近在centos上部署了前端项目发现启动后无法通过ip进行访问，经查询原来是防火墙打开了，经过收集学习了相关的操作。</p><p>Centos升级到7之后，内置的防火墙已经从iptables变成了firewalld。所以，端口的开启还是要从两种情况来说明的，即iptables和firewalld。</p><a id="more"></a>
-
+        <p>最近在centos上部署了前端项目发现启动后无法通过ip进行访问，经查询原来是防火墙打开了，经过收集学习了相关的操作。</p><a id="more"></a>
+<p>Centos升级到7之后，内置的防火墙已经从iptables变成了firewalld。所以，端口的开启还是要从两种情况来说明的，即iptables和firewalld。</p>
 <h3 id="一、iptables-centos-6及以前"><a href="#一、iptables-centos-6及以前" class="headerlink" title="一、iptables(centos 6及以前)"></a>一、iptables(centos 6及以前)</h3><p>1.打开/关闭/重启防火墙</p>
 <pre><code>开启防火墙(重启后永久生效)：  chkconfig iptables on
 关闭防火墙(重启后永久生效)：  chkconfig iptables off
@@ -500,7 +500,7 @@ vi /etc/sysconfig/iptables
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -513,7 +513,7 @@ vi /etc/sysconfig/iptables
             <a href="/categories/">
           
         
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">分类</span>
         </a>
       </div>
@@ -526,7 +526,7 @@ vi /etc/sysconfig/iptables
             <a href="/tags/">
           
         
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>

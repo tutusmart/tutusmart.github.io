@@ -55,18 +55,21 @@
   };
 </script>
 
-  <meta name="description" content="一、国内可选下载镜像源1、国内163镜像源（推荐选择）http://mirrors.163.com/中国技术科学大学http://mirrors.ustc.edu.cn/Centos官方站点http://vault.centos.org/">
+  <meta name="description" content="curl 是常用的命令行工具，用来请求 Web 服务器。它的名字就是客户端（client）的 URL 工具的意思。">
+<meta name="keywords" content="Linux shell">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Centos7.4安装镜像源和repo源">
-<meta property="og:url" content="http://yoursite.com/2019/10/14/Centos7.4安装镜像源和repo源/index.html">
+<meta property="og:title" content="shell中curl 的用法">
+<meta property="og:url" content="http://yoursite.com/2019/10/14/shell中curl 的用法/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一、国内可选下载镜像源1、国内163镜像源（推荐选择）http://mirrors.163.com/中国技术科学大学http://mirrors.ustc.edu.cn/Centos官方站点http://vault.centos.org/">
+<meta property="og:description" content="curl 是常用的命令行工具，用来请求 Web 服务器。它的名字就是客户端（client）的 URL 工具的意思。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-14T01:48:48.107Z">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/9/19/16d495a71b078a30?w=1414&h=216&f=png&s=70212">
+<meta property="og:updated_time" content="2019-10-14T06:42:39.520Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Centos7.4安装镜像源和repo源">
-<meta name="twitter:description" content="一、国内可选下载镜像源1、国内163镜像源（推荐选择）http://mirrors.163.com/中国技术科学大学http://mirrors.ustc.edu.cn/Centos官方站点http://vault.centos.org/">
-  <link rel="canonical" href="http://yoursite.com/2019/10/14/Centos7.4安装镜像源和repo源/">
+<meta name="twitter:title" content="shell中curl 的用法">
+<meta name="twitter:description" content="curl 是常用的命令行工具，用来请求 Web 服务器。它的名字就是客户端（client）的 URL 工具的意思。">
+<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2019/9/19/16d495a71b078a30?w=1414&h=216&f=png&s=70212">
+  <link rel="canonical" href="http://yoursite.com/2019/10/14/shell中curl 的用法/">
 
 
 <script id="page-configurations">
@@ -80,7 +83,7 @@
   };
 </script>
 
-  <title>Centos7.4安装镜像源和repo源 | Hexo</title>
+  <title>shell中curl 的用法 | Hexo</title>
   
 
 
@@ -267,7 +270,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/14/Centos7.4安装镜像源和repo源/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/14/shell中curl 的用法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tutu">
@@ -281,7 +284,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            Centos7.4安装镜像源和repo源
+            shell中curl 的用法
             
 
           
@@ -298,12 +301,29 @@
                 
               
 
-              <time title="创建时间：2019-10-14 09:48:34 / 修改时间：09:48:48" itemprop="dateCreated datePublished" datetime="2019-10-14T09:48:34+08:00">2019-10-14</time>
+              <time title="创建时间：2019-10-14 14:32:00 / 修改时间：14:42:39" itemprop="dateCreated datePublished" datetime="2019-10-14T14:32:00+08:00">2019-10-14</time>
             </span>
           
             
 
             
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -317,10 +337,29 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="一、国内可选下载镜像源"><a href="#一、国内可选下载镜像源" class="headerlink" title="一、国内可选下载镜像源"></a>一、国内可选下载镜像源</h3><h4 id="1、国内"><a href="#1、国内" class="headerlink" title="1、国内"></a>1、国内</h4><p>163镜像源（推荐选择）<br><a href="http://mirrors.163.com/" target="_blank" rel="noopener">http://mirrors.163.com/</a><br>中国技术科学大学<br><a href="http://mirrors.ustc.edu.cn/" target="_blank" rel="noopener">http://mirrors.ustc.edu.cn/</a><br>Centos官方站点<br><a href="http://vault.centos.org/" target="_blank" rel="noopener">http://vault.centos.org/</a>  </p><a id="more"></a>
-<h4 id="2、Centos7-4下载地址"><a href="#2、Centos7-4下载地址" class="headerlink" title="2、Centos7.4下载地址"></a>2、Centos7.4下载地址</h4><p><a href="http://mirrors.163.com/centos/7.4.1708/isos/x86_64/CentOS-7-x86_64-DVD-1708.iso" target="_blank" rel="noopener">http://mirrors.163.com/centos/7.4.1708/isos/x86_64/CentOS-7-x86_64-DVD-1708.iso</a></p>
-<h3 id="二、配置Centos7-4的yum源"><a href="#二、配置Centos7-4的yum源" class="headerlink" title="二、配置Centos7.4的yum源"></a>二、配置Centos7.4的yum源</h3><h4 id="yum所需要使用的repo源如下："><a href="#yum所需要使用的repo源如下：" class="headerlink" title="yum所需要使用的repo源如下："></a>yum所需要使用的repo源如下：</h4><p>在安装好的操作系统中，执行如下命令：<br>vim /etc/yum.repos.d/CentOS-163.repo</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> geographically close to the client.  You should use this for CentOS updates</span><br><span class="line"><span class="meta">#</span> unless you are manually picking other mirrors.</span><br><span class="line"><span class="meta">#</span> </span><br><span class="line"><span class="meta">#</span> If the mirrorlist= does not work for you, as a fall back you can try the </span><br><span class="line"><span class="meta">#</span> remarked out baseurl= line instead.</span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta">#</span> Jeson@imoocc.com</span><br><span class="line">[base]</span><br><span class="line">name=CentOS-$releasever - Base - 163.com</span><br><span class="line"><span class="meta">#</span>mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=os</span><br><span class="line">baseurl=http://mirrors.163.com/centos/$releasever/os/$basearch/</span><br><span class="line">gpgcheck=1</span><br><span class="line">gpgkey=http://mirrors.163.com/centos/RPM-GPG-KEY-CentOS-7</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span>released updates</span><br><span class="line">[updates]</span><br><span class="line">name=CentOS-$releasever - Updates - 163.com</span><br><span class="line"><span class="meta">#</span>mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=updates</span><br><span class="line">baseurl=http://mirrors.163.com/centos/$releasever/updates/$basearch/</span><br><span class="line">gpgcheck=1</span><br><span class="line">gpgkey=http://mirrors.163.com/centos/RPM-GPG-KEY-CentOS-7</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span>additional packages that may be useful</span><br><span class="line">[extras]</span><br><span class="line">name=CentOS-$releasever - Extras - 163.com</span><br><span class="line"><span class="meta">#</span>mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=extras</span><br><span class="line">baseurl=http://mirrors.163.com/centos/$releasever/extras/$basearch/</span><br><span class="line">gpgcheck=1</span><br><span class="line">gpgkey=http://mirrors.163.com/centos/RPM-GPG-KEY-CentOS-7</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span>additional packages that extend functionality of existing packages</span><br><span class="line">[centosplus]</span><br><span class="line">name=CentOS-$releasever - Plus - 163.com</span><br><span class="line">baseurl=http://mirrors.163.com/centos/$releasever/centosplus/$basearch/</span><br><span class="line">gpgcheck=1</span><br><span class="line">enabled=0</span><br><span class="line">gpgkey=http://mirrors.163.com/centos/RPM-GPG-KEY-CentOS-7</span><br></pre></td></tr></table></figure>
+        <p>curl 是常用的命令行工具，用来请求 Web 服务器。它的名字就是客户端（client）的 URL 工具的意思。</p><a id="more"></a>
+<p>它的功能非常强大，命令行参数多达几十种。如果熟练的话，完全可以取代 Postman 这一类的图形界面工具。</p>
+<h3 id="1-不带有任何参数时，curl-就是发出-GET-请求。"><a href="#1-不带有任何参数时，curl-就是发出-GET-请求。" class="headerlink" title="1.不带有任何参数时，curl 就是发出 GET 请求。"></a>1.不带有任何参数时，curl 就是发出 GET 请求。</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl https://www.example.com</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-gold-cdn.xitu.io/2019/9/19/16d495a71b078a30?w=1414&h=216&f=png&s=70212" alt></p>
+<h3 id="2-b参数用来向服务器发送-Cookie。"><a href="#2-b参数用来向服务器发送-Cookie。" class="headerlink" title="2.-b参数用来向服务器发送 Cookie。"></a>2.-b参数用来向服务器发送 Cookie。</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> curl -b <span class="string">'foo=bar'</span> https://google.com</span></span><br></pre></td></tr></table></figure>
+
+<p>上面命令会生成一个标头Cookie: foo=bar，向服务器发送一个名为foo、值为bar的 Cookie。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> curl -b <span class="string">'foo1=bar'</span> -b <span class="string">'foo2=baz'</span> https://google.com</span></span><br></pre></td></tr></table></figure>
+
+<p>上面命令发送两个 Cookie。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -b cookies.txt https://www.google.com</span><br></pre></td></tr></table></figure>
+
+<p> 上面命令读取本地文件cookies.txt，里面是服务器设置的 Cookie（参见-c参数），将其发送到服务器。</p>
+<h3 id="c"><a href="#c" class="headerlink" title="-c"></a>-c</h3><p>  参数将服务器设置的 Cookie 写入一个文件。<br> <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> curl -c cookies.txt https://www.google.com</span></span><br></pre></td></tr></table></figure></p>
+<p> 上面命令将服务器的 HTTP 回应所设置 Cookie 写入文本文件cookies.txt。</p>
+<h3 id="d"><a href="#d" class="headerlink" title="-d"></a>-d</h3><p>  参数用于发送 POST 请求的数据体。<br> <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> curl -d <span class="string">'login=emma＆password=123'</span>-X POST https://google.com/login</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 或者</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> curl -d <span class="string">'login=emma'</span> -d <span class="string">'password=123'</span> -X POST  https://google.com/login</span></span><br></pre></td></tr></table></figure></p>
+<p>使用-d参数以后，HTTP 请求会自动加上标头Content-Type : application/x-www-form-urlencoded。并且会自动将请求转为 POST 方法，因此可以省略-X POST。</p>
+<p>-d参数可以读取本地文本文件的数据，向服务器发送。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> curl -d <span class="string">'@data.txt'</span> https://google.com/login</span></span><br></pre></td></tr></table></figure>
+
+<p>上面命令读取data.txt文件的内容，作为数据体向服务器发送。</p>
+
     </div>
 
     
@@ -332,14 +371,23 @@
       
 
       <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/Linux-shell/" rel="tag"># Linux shell</a>
+            
+          </div>
+        
 
         
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2019/10/14/VMWare 下安装Centos网络设置（局域网配置）/" rel="next" title="VMWare 下安装Centos网络设置（局域网配置）">
-                  <i class="fa fa-chevron-left"></i> VMWare 下安装Centos网络设置（局域网配置）
+                <a href="/2019/10/14/Win10安装Mongodb，并配置成服务/Win10安装Mongodb，并配置成服务/" rel="next" title="Win10安装Mongodb，并配置成服务">
+                  <i class="fa fa-chevron-left"></i> Win10安装Mongodb，并配置成服务
                 </a>
               
             </div>
@@ -348,8 +396,8 @@
 
             <div class="post-nav-prev post-nav-item">
               
-                <a href="/2019/10/14/Win10安装Mongodb，并配置成服务/Win10安装Mongodb，并配置成服务/" rel="prev" title="Win10安装Mongodb，并配置成服务">
-                  Win10安装Mongodb，并配置成服务 <i class="fa fa-chevron-right"></i>
+                <a href="/2019/10/14/vscode 常用配置/" rel="prev" title="vscode 常用配置">
+                  vscode 常用配置 <i class="fa fa-chevron-right"></i>
                 </a>
               
             </div>
@@ -396,7 +444,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、国内可选下载镜像源"><span class="nav-number">1.</span> <span class="nav-text">一、国内可选下载镜像源</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、国内"><span class="nav-number">1.1.</span> <span class="nav-text">1、国内</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、Centos7-4下载地址"><span class="nav-number">1.2.</span> <span class="nav-text">2、Centos7.4下载地址</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、配置Centos7-4的yum源"><span class="nav-number">2.</span> <span class="nav-text">二、配置Centos7.4的yum源</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#yum所需要使用的repo源如下："><span class="nav-number">2.1.</span> <span class="nav-text">yum所需要使用的repo源如下：</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-不带有任何参数时，curl-就是发出-GET-请求。"><span class="nav-number">1.</span> <span class="nav-text">1.不带有任何参数时，curl 就是发出 GET 请求。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-b参数用来向服务器发送-Cookie。"><span class="nav-number">2.</span> <span class="nav-text">2.-b参数用来向服务器发送 Cookie。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#c"><span class="nav-number">3.</span> <span class="nav-text">-c</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#d"><span class="nav-number">4.</span> <span class="nav-text">-d</span></a></li></ol></div>
         
       </div>
       <!--/noindex-->

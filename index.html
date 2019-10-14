@@ -263,6 +263,552 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/14/git学习常用命令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tutu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/user.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            
+            <a href="/2019/10/14/git学习常用命令/" class="post-title-link" itemprop="url">git常用命令</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-10-14 14:54:00 / 修改时间：15:03:09" itemprop="dateCreated datePublished" datetime="2019-10-14T14:54:00+08:00">2019-10-14</time>
+            </span>
+          
+            
+
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Git/" itemprop="url" rel="index">
+                    <span itemprop="name">Git</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>git学习常用命令</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>mkdir：</td>
+<td>XX (创建一个空目录 XX指目录名)</td>
+</tr>
+<tr>
+<td>pwd：</td>
+<td>显示当前目录的路径。</td>
+</tr>
+<tr>
+<td>git init</td>
+<td>把当前的目录变成可以管理的git仓库，生成隐藏.git文件。</td>
+</tr>
+<tr>
+<td>git add XX</td>
+<td>把xx文件添加到暂存区去。</td>
+</tr>
+<tr>
+<td>git commit –m “xx”</td>
+<td>提交文件 –m 后面的是注释。</td>
+</tr>
+<tr>
+<td>git status</td>
+<td>查看仓库状态</td>
+</tr>
+<tr>
+<td>git diff  XX</td>
+<td>查看XX文件修改了那些内容</td>
+</tr>
+<tr>
+<td>git log</td>
+<td>查看历史记录 9ba77981e50d3df1d71e760dd43c049d79a44b6d</td>
+</tr>
+<tr>
+<td>git reset  –hard HEAD^ 或者 git reset  –hard HEAD~</td>
+<td>回退到上一个版 本(如果想回退到100个版本，使用git reset –hard HEAD~100 )</td>
+</tr>
+<tr>
+<td>git  reflog</td>
+<td>查看历史记录的版本号id</td>
+</tr>
+<tr>
+<td>git  reset –hard</td>
+<td>版本号  (回到某个版本)</td>
+</tr>
+<tr>
+<td>cat XX</td>
+<td>查看XX文件内容</td>
+</tr>
+<tr>
+<td>git checkout — XX</td>
+<td>把XX文件在工作区的修改全部撤销。</td>
+</tr>
+<tr>
+<td>git rm XX</td>
+<td>删除XX文件</td>
+</tr>
+<tr>
+<td>git remote add origin <a href="https://github.com/tugenhua0707/testgit" target="_blank" rel="noopener">https://github.com/tugenhua0707/testgit</a></td>
+<td>关联一个远程库</td>
+</tr>
+<tr>
+<td>git remote remove origin</td>
+<td>删除remote</td>
+</tr>
+<tr>
+<td>git push –u(第一次要用-u 以后不需要) origin master</td>
+<td>把当前master分支推送到远程库</td>
+</tr>
+<tr>
+<td>git clone <a href="https://github.com/tugenhua0707/testgit" target="_blank" rel="noopener">https://github.com/tugenhua0707/testgit</a></td>
+<td>从远程库中克隆</td>
+</tr>
+<tr>
+<td>git checkout –b dev</td>
+<td>创建dev分支 并切换到dev分支上  //拉取远程分支</td>
+</tr>
+<tr>
+<td>git branch</td>
+<td>查看当前所有的分支</td>
+</tr>
+<tr>
+<td>git checkout master</td>
+<td>切换回master分支</td>
+</tr>
+<tr>
+<td>git merge dev</td>
+<td>在当前的分支上合并dev分支</td>
+</tr>
+<tr>
+<td>git branch –d dev</td>
+<td>删除(本地的)dev分支</td>
+</tr>
+<tr>
+<td>git push origin :dev</td>
+<td>(同步删除线上的分支)</td>
+</tr>
+<tr>
+<td>git branch name</td>
+<td>创建分支(本地创建分支)</td>
+</tr>
+<tr>
+<td>git push origin probranch(本地):probranch</td>
+<td>(上传到线的分支)</td>
+</tr>
+<tr>
+<td>git stash</td>
+<td>把当前的工作隐藏起来 等以后恢复现场后继续工作</td>
+</tr>
+<tr>
+<td>git stash list</td>
+<td>查看所有被隐藏的文件列表</td>
+</tr>
+<tr>
+<td>git stash apply</td>
+<td>恢复被隐藏的文件，但是内容不删除</td>
+</tr>
+<tr>
+<td>git stash drop</td>
+<td>删除文件</td>
+</tr>
+<tr>
+<td>git stash pop</td>
+<td>恢复文件的同时 也删除文件</td>
+</tr>
+<tr>
+<td>git remote</td>
+<td>查看远程库的信息</td>
+</tr>
+<tr>
+<td>git remote –v</td>
+<td>查看远程库的详细信息</td>
+</tr>
+<tr>
+<td>git push origin master</td>
+<td>Git会把master分支推送到远程库对应的远程分支上</td>
+</tr>
+<tr>
+<td>git checkout -b 本地分支名 origin/远程分支名</td>
+<td>将远程git仓库里的指定分支拉取到本地（本地不存在的分支）</td>
+</tr>
+<tr>
+<td>git push –set-upstream origin 分支名</td>
+<td>git push –set-upstream origin 分支名</td>
+</tr>
+<tr>
+<td>git config –global credential.helper store</td>
+<td>免密码命令 输入命令后再次输入账号密码 以后都可以不用输入密码了</td>
+</tr>
+<tr>
+<td>git fetch –prune</td>
+<td>远端有新增分支，git fetch可以同步到新的分支到本地，但是远端有删除分支，直接”git fetch”是不能将远程已经不存在的branch等在本地删除的</td>
+</tr>
+<tr>
+<td>git reset –hard origin/master</td>
+<td>你想让本地直接和远程保持同步，想让不再提示这个讨厌信息，那么如果你本地的commit确保不想要</td>
+</tr>
+<tr>
+<td>git branch -u origin/master</td>
+<td>或者还有一个将本地代码与服务器代码更新一致的语句</td>
+</tr>
+<tr>
+<td>git push -f origin master</td>
+<td>如果想直接回退版本让远程和本地代码保持一致，那就确保本地代码没问题之后强制推到远程</td>
+</tr>
+</tbody></table>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/14/vscode 常用配置/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tutu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/user.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            
+            <a href="/2019/10/14/vscode 常用配置/" class="post-title-link" itemprop="url">vscode 常用配置</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-10-14 14:48:00 / 修改时间：15:00:14" itemprop="dateCreated datePublished" datetime="2019-10-14T14:48:00+08:00">2019-10-14</time>
+            </span>
+          
+            
+
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/vscode/" itemprop="url" rel="index">
+                    <span itemprop="name">vscode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <table>
+<thead>
+<tr>
+<th>插件名称</th>
+<th>功能简述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Auto Close Tag</td>
+<td>自动闭合HTML标签</td>
+</tr>
+<tr>
+<td>Auto Import</td>
+<td>Typescript自动import提示</td>
+</tr>
+<tr>
+<td>Auto Rename Tag</td>
+<td>修改HTML标签时，自动修改匹配的标签</td>
+</tr>
+<tr>
+<td>Beautify css/sass/scss/less</td>
+<td>css/sass/less格式化</td>
+</tr>
+<tr>
+<td>Better Comments</td>
+<td>编写更加人性化的注释</td>
+</tr>
+<tr>
+<td>Bookmarks</td>
+<td>添加行书签</td>
+</tr>
+<tr>
+<td>Color Picker</td>
+<td>拾色器</td>
+</tr>
+<tr>
+<td>Color Highlight</td>
+<td>颜色值在代码中高亮显示</td>
+</tr>
+<tr>
+<td>HTML CSS Support</td>
+<td>css提示（支持vue）</td>
+</tr>
+<tr>
+<td>PostCss Sorting</td>
+<td>css排序</td>
+</tr>
+<tr>
+<td>Sass</td>
+<td>sass插件</td>
+</tr>
+<tr>
+<td>gitignore</td>
+<td>.gitignore文件语法</td>
+</tr>
+<tr>
+<td>vetur</td>
+<td>目前比较好的Vue语法高亮</td>
+</tr>
+<tr>
+<td>vscode-styled-jsx</td>
+<td>vscode-styled-jsx styled-jsx高亮支持</td>
+</tr>
+<tr>
+<td>Chinese (Simplified) Language</td>
+<td>中文插件</td>
+</tr>
+<tr>
+<td>IntelliSense for CSS class names in HTML</td>
+<td>html中css提示</td>
+</tr>
+<tr>
+<td>Markdown Preview Enhanced</td>
+<td>vscode markdown支持</td>
+</tr>
+<tr>
+<td>One Dark Pro</td>
+<td>vscode主题颜色</td>
+</tr>
+<tr>
+<td>open in browser</td>
+<td>html文件支持浏览器打开</td>
+</tr>
+<tr>
+<td>vscode-icons</td>
+<td>vscode 文件文件夹小图标</td>
+</tr>
+<tr>
+<td>JavaScript (ES6) code snippets</td>
+<td>es6代码提示功能</td>
+</tr>
+</tbody></table>
+          <!--noindex-->
+          
+            <div class="post-button">
+              <a class="btn" href="/2019/10/14/vscode 常用配置/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/14/shell中curl 的用法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tutu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/user.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            
+            <a href="/2019/10/14/shell中curl 的用法/" class="post-title-link" itemprop="url">shell中curl 的用法</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-10-14 14:32:00 / 修改时间：14:42:39" itemprop="dateCreated datePublished" datetime="2019-10-14T14:32:00+08:00">2019-10-14</time>
+            </span>
+          
+            
+
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>curl 是常用的命令行工具，用来请求 Web 服务器。它的名字就是客户端（client）的 URL 工具的意思。</p>
+          <!--noindex-->
+          
+            <div class="post-button">
+              <a class="btn" href="/2019/10/14/shell中curl 的用法/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/14/Win10安装Mongodb，并配置成服务/Win10安装Mongodb，并配置成服务/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -293,7 +839,7 @@
                 
               
 
-              <time title="创建时间：2019-10-14 09:49:07 / 修改时间：10:15:28" itemprop="dateCreated datePublished" datetime="2019-10-14T09:49:07+08:00">2019-10-14</time>
+              <time title="创建时间：2019-10-14 09:49:07 / 修改时间：14:29:23" itemprop="dateCreated datePublished" datetime="2019-10-14T09:49:07+08:00">2019-10-14</time>
             </span>
           
             
@@ -329,7 +875,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>一：先去官网下载对应的版本;<br>二：把bin文件夹拷贝到跟MongoDB目录，然后在根目录下建一个data文件夹存放日志跟数据库，然后data文件夹下建db跟log文件夹，并在log文件夹下新建一个日志文件mongolog.log，如下</p>
+          <p>一：先去官网下载对应的版本;<br>二：把bin文件夹拷贝到跟MongoDB目录，然后在根目录下建一个data文件夹存放日志跟数据库，然后data文件夹下建db跟log文件夹，并在log文件夹下新建一个日志文件mongolog.log<br>如下图所示：</p>
           <!--noindex-->
           
             <div class="post-button">
@@ -506,7 +1052,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><strong>最近打算为centos安装一个界面时，发现不能上网。ping <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a> 报name or service not known。<br>原来网络配置没设好。</strong></p><h2 id="一、选择VMWare的NAT模式。"><a href="#一、选择VMWare的NAT模式。" class="headerlink" title="一、选择VMWare的NAT模式。"></a>一、选择VMWare的NAT模式。</h2><p>1）导航栏“编辑”-&gt;“虚拟网络编辑器” -&gt;NAT模式-&gt;NAT设置<br><img src="https://user-gold-cdn.xitu.io/2019/9/2/16cf15c295b06b40?w=655&h=743&f=png&s=58854" alt></p>
+          <p><strong>最近打算为centos安装一个界面时，发现不能上网。ping <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a> 报name or service not known。<br>原来网络配置没设好。</strong></p>
           <!--noindex-->
           
             <div class="post-button">
@@ -603,7 +1149,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="1、上传本地文件到服务器"><a href="#1、上传本地文件到服务器" class="headerlink" title="1、上传本地文件到服务器"></a>1、上传本地文件到服务器</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp /path/filename username@servername:/path/</span><br></pre></td></tr></table></figure><p>例如scp /var/www/test.php <a href="mailto:root@192.168.0.101" target="_blank" rel="noopener">root@192.168.0.101</a>:/var/www/ 把本机/var/www/目录下的test.php文件上传到192.168.0.101这台服务器上的/var/www/目录中</p>
+          <h3 id="1、上传本地文件到服务器"><a href="#1、上传本地文件到服务器" class="headerlink" title="1、上传本地文件到服务器"></a>1、上传本地文件到服务器</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp /path/filename username@servername:/path/</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           
             <div class="post-button">
@@ -700,7 +1246,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>最近在centos上部署了前端项目发现启动后无法通过ip进行访问，经查询原来是防火墙打开了，经过收集学习了相关的操作。</p><p>Centos升级到7之后，内置的防火墙已经从iptables变成了firewalld。所以，端口的开启还是要从两种情况来说明的，即iptables和firewalld。</p>
+          <p>最近在centos上部署了前端项目发现启动后无法通过ip进行访问，经查询原来是防火墙打开了，经过收集学习了相关的操作。</p>
           <!--noindex-->
           
             <div class="post-button">
@@ -761,7 +1307,7 @@
                 
               
 
-              <time title="创建时间：2019-10-12 14:50:44" itemprop="dateCreated datePublished" datetime="2019-10-12T14:50:44+08:00">2019-10-12</time>
+              <time title="创建时间：2019-10-12 14:50:00" itemprop="dateCreated datePublished" datetime="2019-10-12T14:50:00+08:00">2019-10-12</time>
             </span>
           
             
@@ -772,7 +1318,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-10-14 09:51:21" itemprop="dateModified" datetime="2019-10-14T09:51:21+08:00">2019-10-14</time>
+                <time title="修改时间：2019-10-14 14:45:54" itemprop="dateModified" datetime="2019-10-14T14:45:54+08:00">2019-10-14</time>
               </span>
             
           
@@ -805,7 +1351,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="一、下载"><a href="#一、下载" class="headerlink" title="一、下载"></a>一、下载</h3><p>centos7 直接只用</p><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum <span class="keyword">install</span> -y nginx</span><br></pre></td></tr></table></figure><h3 id="二、使用"><a href="#二、使用" class="headerlink" title="二、使用"></a>二、使用</h3><p>找到nginx安装位置，我的安装位置在/etc/nginx<br><img src="https://user-gold-cdn.xitu.io/2019/9/3/16cf60bafb8e1736?w=569&h=151&f=png&s=13891" alt><br>其中配置文件（nginx.config），我们可以指定端口 代理配置内容<br>###三、 启动<br>CentOS 7.5下启动 Nginx 出现如下错误：</p>
+          <h3 id="一、下载"><a href="#一、下载" class="headerlink" title="一、下载"></a>一、下载</h3><p>centos7 直接只用</p><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum <span class="keyword">install</span> -y nginx</span><br></pre></td></tr></table></figure><h3 id="二、使用"><a href="#二、使用" class="headerlink" title="二、使用"></a>二、使用</h3><p>找到nginx安装位置，我的安装位置在/etc/nginx<br><img src="%5Cimages%5Cpasted-2.png" alt="upload successful"><br>其中配置文件（nginx.config），我们可以指定端口 代理配置内容</p>
           <!--noindex-->
           
             <div class="post-button">
@@ -910,7 +1456,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="1-安装启动"><a href="#1-安装启动" class="headerlink" title="1.安装启动"></a>1.安装启动</h3><p>在GitBash 中操作，输入以下命令，等待安装完成。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure><p>a.安装 hexo</p>
+          <h3 id="1-安装启动"><a href="#1-安装启动" class="headerlink" title="1.安装启动"></a>1.安装启动</h3><p>在GitBash 中操作，输入以下命令，等待安装完成。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           
             <div class="post-button">
@@ -937,222 +1483,12 @@
   
 
     
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/11/centos7 软件安装/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tutu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/user.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            
-            <a href="/2019/10/11/centos7 软件安装/" class="post-title-link" itemprop="url">centos7 软件安装</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2019-10-11 19:29:40" itemprop="dateCreated datePublished" datetime="2019-10-11T19:29:40+08:00">2019-10-11</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-10-14 09:56:27" itemprop="dateModified" datetime="2019-10-14T09:56:27+08:00">2019-10-14</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="1-安装Mysql"><a href="#1-安装Mysql" class="headerlink" title="1.安装Mysql"></a>1.安装Mysql</h3><p>在要安装的目录下执行一下命令 我这就是进入到/home/money/后执行以下命令</p><p>下载</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -i -c http://dev.mysql.com/get/mysql57-community-release-el7-10.noarch.rpm</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          
-            <div class="post-button">
-              <a class="btn" href="/2019/10/11/centos7 软件安装/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </article>
-  
-  
-  
-
-    
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/11/玩转Linux操作系统/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tutu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/user.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            
-            <a href="/2019/10/11/玩转Linux操作系统/" class="post-title-link" itemprop="url">玩转Linux操作系统</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2019-10-11 16:14:40" itemprop="dateCreated datePublished" datetime="2019-10-11T16:14:40+08:00">2019-10-11</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-10-12 08:55:14" itemprop="dateModified" datetime="2019-10-12T08:55:14+08:00">2019-10-12</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <blockquote>
-<p>说明：本文中对Linux命令的讲解都是基于名为CentOS的Linux发行版本，我自己使用的是阿里云服务器，系统版本为CentOS Linux release 7.6.1810。不同的Linux发行版本在Shell命令和工具程序上会有一些差别，但是这些差别是很小的。</p>
-</blockquote>
-<h3 id="操作系统发展史"><a href="#操作系统发展史" class="headerlink" title="操作系统发展史"></a>操作系统发展史</h3><p>只有硬件没有软件的计算机系统被称之为“裸机”，我们很难用“裸机”来完成计算机日常的工作（如存储和运算），所以必须用特定的软件来控制硬件的工作。最靠近计算机硬件的软件是系统软件，其中最为重要的就是“操作系统”。“操作系统”是控制和管理整个计算机硬件和软件资源、实现资源分配和任务调配、为系统用户以及其他软件提供接口和环境的程序的集合。</p>
-          <!--noindex-->
-          
-            <div class="post-button">
-              <a class="btn" href="/2019/10/11/玩转Linux操作系统/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </article>
-  
-  
-  
-
-    
   </div>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
 
 
 
@@ -1199,7 +1535,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1212,7 +1548,7 @@
             <a href="/categories/">
           
         
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">分类</span>
         </a>
       </div>
@@ -1225,7 +1561,7 @@
             <a href="/tags/">
           
         
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>

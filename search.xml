@@ -1,10 +1,330 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>git常用命令</title>
+    <url>/2019/10/14/git%E5%AD%A6%E4%B9%A0%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<p>git学习常用命令</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>mkdir：</td>
+<td>XX (创建一个空目录 XX指目录名)</td>
+</tr>
+<tr>
+<td>pwd：</td>
+<td>显示当前目录的路径。</td>
+</tr>
+<tr>
+<td>git init</td>
+<td>把当前的目录变成可以管理的git仓库，生成隐藏.git文件。</td>
+</tr>
+<tr>
+<td>git add XX</td>
+<td>把xx文件添加到暂存区去。</td>
+</tr>
+<tr>
+<td>git commit –m “xx”</td>
+<td>提交文件 –m 后面的是注释。</td>
+</tr>
+<tr>
+<td>git status</td>
+<td>查看仓库状态</td>
+</tr>
+<tr>
+<td>git diff  XX</td>
+<td>查看XX文件修改了那些内容</td>
+</tr>
+<tr>
+<td>git log</td>
+<td>查看历史记录 9ba77981e50d3df1d71e760dd43c049d79a44b6d</td>
+</tr>
+<tr>
+<td>git reset  –hard HEAD^ 或者 git reset  –hard HEAD~</td>
+<td>回退到上一个版 本(如果想回退到100个版本，使用git reset –hard HEAD~100 )</td>
+</tr>
+<tr>
+<td>git  reflog</td>
+<td>查看历史记录的版本号id</td>
+</tr>
+<tr>
+<td>git  reset –hard</td>
+<td>版本号  (回到某个版本)</td>
+</tr>
+<tr>
+<td>cat XX</td>
+<td>查看XX文件内容</td>
+</tr>
+<tr>
+<td>git checkout — XX</td>
+<td>把XX文件在工作区的修改全部撤销。</td>
+</tr>
+<tr>
+<td>git rm XX</td>
+<td>删除XX文件</td>
+</tr>
+<tr>
+<td>git remote add origin <a href="https://github.com/tugenhua0707/testgit" target="_blank" rel="noopener">https://github.com/tugenhua0707/testgit</a></td>
+<td>关联一个远程库</td>
+</tr>
+<tr>
+<td>git remote remove origin</td>
+<td>删除remote</td>
+</tr>
+<tr>
+<td>git push –u(第一次要用-u 以后不需要) origin master</td>
+<td>把当前master分支推送到远程库</td>
+</tr>
+<tr>
+<td>git clone <a href="https://github.com/tugenhua0707/testgit" target="_blank" rel="noopener">https://github.com/tugenhua0707/testgit</a></td>
+<td>从远程库中克隆</td>
+</tr>
+<tr>
+<td>git checkout –b dev</td>
+<td>创建dev分支 并切换到dev分支上  //拉取远程分支</td>
+</tr>
+<tr>
+<td>git branch</td>
+<td>查看当前所有的分支</td>
+</tr>
+<tr>
+<td>git checkout master</td>
+<td>切换回master分支</td>
+</tr>
+<tr>
+<td>git merge dev</td>
+<td>在当前的分支上合并dev分支</td>
+</tr>
+<tr>
+<td>git branch –d dev</td>
+<td>删除(本地的)dev分支</td>
+</tr>
+<tr>
+<td>git push origin :dev</td>
+<td>(同步删除线上的分支)</td>
+</tr>
+<tr>
+<td>git branch name</td>
+<td>创建分支(本地创建分支)</td>
+</tr>
+<tr>
+<td>git push origin probranch(本地):probranch</td>
+<td>(上传到线的分支)</td>
+</tr>
+<tr>
+<td>git stash</td>
+<td>把当前的工作隐藏起来 等以后恢复现场后继续工作</td>
+</tr>
+<tr>
+<td>git stash list</td>
+<td>查看所有被隐藏的文件列表</td>
+</tr>
+<tr>
+<td>git stash apply</td>
+<td>恢复被隐藏的文件，但是内容不删除</td>
+</tr>
+<tr>
+<td>git stash drop</td>
+<td>删除文件</td>
+</tr>
+<tr>
+<td>git stash pop</td>
+<td>恢复文件的同时 也删除文件</td>
+</tr>
+<tr>
+<td>git remote</td>
+<td>查看远程库的信息</td>
+</tr>
+<tr>
+<td>git remote –v</td>
+<td>查看远程库的详细信息</td>
+</tr>
+<tr>
+<td>git push origin master</td>
+<td>Git会把master分支推送到远程库对应的远程分支上</td>
+</tr>
+<tr>
+<td>git checkout -b 本地分支名 origin/远程分支名</td>
+<td>将远程git仓库里的指定分支拉取到本地（本地不存在的分支）</td>
+</tr>
+<tr>
+<td>git push –set-upstream origin 分支名</td>
+<td>git push –set-upstream origin 分支名</td>
+</tr>
+<tr>
+<td>git config –global credential.helper store</td>
+<td>免密码命令 输入命令后再次输入账号密码 以后都可以不用输入密码了</td>
+</tr>
+<tr>
+<td>git fetch –prune</td>
+<td>远端有新增分支，git fetch可以同步到新的分支到本地，但是远端有删除分支，直接”git fetch”是不能将远程已经不存在的branch等在本地删除的</td>
+</tr>
+<tr>
+<td>git reset –hard origin/master</td>
+<td>你想让本地直接和远程保持同步，想让不再提示这个讨厌信息，那么如果你本地的commit确保不想要</td>
+</tr>
+<tr>
+<td>git branch -u origin/master</td>
+<td>或者还有一个将本地代码与服务器代码更新一致的语句</td>
+</tr>
+<tr>
+<td>git push -f origin master</td>
+<td>如果想直接回退版本让远程和本地代码保持一致，那就确保本地代码没问题之后强制推到远程</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vscode 常用配置</title>
+    <url>/2019/10/14/vscode%20%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<table>
+<thead>
+<tr>
+<th>插件名称</th>
+<th>功能简述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Auto Close Tag</td>
+<td>自动闭合HTML标签</td>
+</tr>
+<tr>
+<td>Auto Import</td>
+<td>Typescript自动import提示</td>
+</tr>
+<tr>
+<td>Auto Rename Tag</td>
+<td>修改HTML标签时，自动修改匹配的标签</td>
+</tr>
+<tr>
+<td>Beautify css/sass/scss/less</td>
+<td>css/sass/less格式化</td>
+</tr>
+<tr>
+<td>Better Comments</td>
+<td>编写更加人性化的注释</td>
+</tr>
+<tr>
+<td>Bookmarks</td>
+<td>添加行书签</td>
+</tr>
+<tr>
+<td>Color Picker</td>
+<td>拾色器</td>
+</tr>
+<tr>
+<td>Color Highlight</td>
+<td>颜色值在代码中高亮显示</td>
+</tr>
+<tr>
+<td>HTML CSS Support</td>
+<td>css提示（支持vue）</td>
+</tr>
+<tr>
+<td>PostCss Sorting</td>
+<td>css排序</td>
+</tr>
+<tr>
+<td>Sass</td>
+<td>sass插件</td>
+</tr>
+<tr>
+<td>gitignore</td>
+<td>.gitignore文件语法</td>
+</tr>
+<tr>
+<td>vetur</td>
+<td>目前比较好的Vue语法高亮</td>
+</tr>
+<tr>
+<td>vscode-styled-jsx</td>
+<td>vscode-styled-jsx styled-jsx高亮支持</td>
+</tr>
+<tr>
+<td>Chinese (Simplified) Language</td>
+<td>中文插件</td>
+</tr>
+<tr>
+<td>IntelliSense for CSS class names in HTML</td>
+<td>html中css提示</td>
+</tr>
+<tr>
+<td>Markdown Preview Enhanced</td>
+<td>vscode markdown支持</td>
+</tr>
+<tr>
+<td>One Dark Pro</td>
+<td>vscode主题颜色</td>
+</tr>
+<tr>
+<td>open in browser</td>
+<td>html文件支持浏览器打开</td>
+</tr>
+<tr>
+<td>vscode-icons</td>
+<td>vscode 文件文件夹小图标</td>
+</tr>
+<tr>
+<td>JavaScript (ES6) code snippets</td>
+<td>es6代码提示功能</td>
+</tr>
+</tbody></table><a id="more"></a>
+<h3 id="附个人配置文件"><a href="#附个人配置文件" class="headerlink" title="附个人配置文件"></a>附个人配置文件</h3><figure class="highlight"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    // VScode主题配置</span><br><span class="line">    "editor.tabSize": 2,</span><br><span class="line">    "editor.lineHeight": 18,</span><br><span class="line">    "editor.renderLineHighlight": "none",</span><br><span class="line">    "editor.renderWhitespace": "all",</span><br><span class="line">    "editor.fontFamily": "Courier New",</span><br><span class="line">    "editor.fontSize": 14,</span><br><span class="line">    "editor.cursorBlinking": "smooth",</span><br><span class="line">    "editor.multiCursorModifier": "ctrlCmd",</span><br><span class="line">    "editor.formatOnPaste": true,</span><br><span class="line">    // 是否允许自定义的snippet片段提示,比如自定义的vue片段开启后就可以智能提示</span><br><span class="line">    "editor.snippetSuggestions": "top",</span><br><span class="line">    "workbench.iconTheme": "vscode-icons",</span><br><span class="line">    "workbench.startupEditor": "none",</span><br><span class="line"></span><br><span class="line">    "files.trimTrailingWhitespace": true,</span><br><span class="line">    // 在react的jsx中添加对emmet的支持</span><br><span class="line">    "emmet.includeLanguages": &#123;</span><br><span class="line">        "jsx-sublime-babel-tags": "javascriptreact"</span><br><span class="line">    &#125;,</span><br><span class="line">    "[cpp]": &#123;</span><br><span class="line">        "editor.quickSuggestions": true</span><br><span class="line">    &#125;,</span><br><span class="line">    "[c]": &#123;</span><br><span class="line">        "editor.quickSuggestions": true</span><br><span class="line">    &#125;,</span><br><span class="line">    "liveServer.settings.port": 5555,</span><br><span class="line">    "window.zoomLevel": 1,</span><br><span class="line">    "javascript.validate.enable": false,</span><br><span class="line">    "vetur.validation.template": false,</span><br><span class="line">    "tslint.autoFixOnSave": false,</span><br><span class="line">    "C_Cpp.errorSquiggles": "Disabled",</span><br><span class="line">    "javascript.implicitProjectConfig.experimentalDecorators": true,</span><br><span class="line">    "workbench.colorTheme": "One Dark Pro",</span><br><span class="line">    "terminal.integrated.shell.windows": "C:\\Windows\\System32\\cmd.exe",</span><br><span class="line">    "liveServer.settings.donotShowInfoMsg": true,</span><br><span class="line">    "[html]": &#123;</span><br><span class="line">        "editor.defaultFormatter": "vscode.html-language-features"</span><br><span class="line">    &#125;,</span><br><span class="line">    "explorer.confirmDelete": false</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>vscode</category>
+      </categories>
+      <tags>
+        <tag>vscode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>shell中curl 的用法</title>
+    <url>/2019/10/14/shell%E4%B8%ADcurl%20%E7%9A%84%E7%94%A8%E6%B3%95/</url>
+    <content><![CDATA[<p>curl 是常用的命令行工具，用来请求 Web 服务器。它的名字就是客户端（client）的 URL 工具的意思。</p><a id="more"></a>
+<p>它的功能非常强大，命令行参数多达几十种。如果熟练的话，完全可以取代 Postman 这一类的图形界面工具。</p>
+<h3 id="1-不带有任何参数时，curl-就是发出-GET-请求。"><a href="#1-不带有任何参数时，curl-就是发出-GET-请求。" class="headerlink" title="1.不带有任何参数时，curl 就是发出 GET 请求。"></a>1.不带有任何参数时，curl 就是发出 GET 请求。</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">curl https://www.example.com</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-gold-cdn.xitu.io/2019/9/19/16d495a71b078a30?w=1414&h=216&f=png&s=70212" alt></p>
+<h3 id="2-b参数用来向服务器发送-Cookie。"><a href="#2-b参数用来向服务器发送-Cookie。" class="headerlink" title="2.-b参数用来向服务器发送 Cookie。"></a>2.-b参数用来向服务器发送 Cookie。</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> curl -b <span class="string">'foo=bar'</span> https://google.com</span></span><br></pre></td></tr></table></figure>
+
+<p>上面命令会生成一个标头Cookie: foo=bar，向服务器发送一个名为foo、值为bar的 Cookie。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> curl -b <span class="string">'foo1=bar'</span> -b <span class="string">'foo2=baz'</span> https://google.com</span></span><br></pre></td></tr></table></figure>
+
+<p>上面命令发送两个 Cookie。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">curl -b cookies.txt https://www.google.com</span><br></pre></td></tr></table></figure>
+
+<p> 上面命令读取本地文件cookies.txt，里面是服务器设置的 Cookie（参见-c参数），将其发送到服务器。</p>
+<h3 id="c"><a href="#c" class="headerlink" title="-c"></a>-c</h3><p>  参数将服务器设置的 Cookie 写入一个文件。<br> <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> curl -c cookies.txt https://www.google.com</span></span><br></pre></td></tr></table></figure></p>
+<p> 上面命令将服务器的 HTTP 回应所设置 Cookie 写入文本文件cookies.txt。</p>
+<h3 id="d"><a href="#d" class="headerlink" title="-d"></a>-d</h3><p>  参数用于发送 POST 请求的数据体。<br> <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> curl -d <span class="string">'login=emma＆password=123'</span>-X POST https://google.com/login</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 或者</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> curl -d <span class="string">'login=emma'</span> -d <span class="string">'password=123'</span> -X POST  https://google.com/login</span></span><br></pre></td></tr></table></figure></p>
+<p>使用-d参数以后，HTTP 请求会自动加上标头Content-Type : application/x-www-form-urlencoded。并且会自动将请求转为 POST 方法，因此可以省略-X POST。</p>
+<p>-d参数可以读取本地文本文件的数据，向服务器发送。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> curl -d <span class="string">'@data.txt'</span> https://google.com/login</span></span><br></pre></td></tr></table></figure>
+
+<p>上面命令读取data.txt文件的内容，作为数据体向服务器发送。</p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux shell</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Win10安装Mongodb，并配置成服务</title>
     <url>/2019/10/14/Win10%E5%AE%89%E8%A3%85Mongodb%EF%BC%8C%E5%B9%B6%E9%85%8D%E7%BD%AE%E6%88%90%E6%9C%8D%E5%8A%A1/Win10%E5%AE%89%E8%A3%85Mongodb%EF%BC%8C%E5%B9%B6%E9%85%8D%E7%BD%AE%E6%88%90%E6%9C%8D%E5%8A%A1/</url>
-    <content><![CDATA[<p>一：先去官网下载对应的版本;<br>二：把bin文件夹拷贝到跟MongoDB目录，然后在根目录下建一个data文件夹存放日志跟数据库，然后data文件夹下建db跟log文件夹，并在log文件夹下新建一个日志文件mongolog.log，如下</p><a id="more"></a>
-<p>图所示：<br><img src="https://user-gold-cdn.xitu.io/2019/8/6/16c659090f8ce681?w=516&h=304&f=png&s=17920" alt>)<img src="https://user-gold-cdn.xitu.io/2019/8/6/16c6590c733468f9?w=567&h=244&f=png&s=14427" alt>)<img src="https://user-gold-cdn.xitu.io/2019/8/6/16c6590f19426cd6?w=635&h=226&f=png&s=14108" alt></p>
+    <content><![CDATA[<p>一：先去官网下载对应的版本;<br>二：把bin文件夹拷贝到跟MongoDB目录，然后在根目录下建一个data文件夹存放日志跟数据库，然后data文件夹下建db跟log文件夹，并在log文件夹下新建一个日志文件mongolog.log<br>如下图所示：</p><a id="more"></a>
+<p><img src="https://user-gold-cdn.xitu.io/2019/8/6/16c659090f8ce681?w=516&h=304&f=png&s=17920" alt>)<img src="https://user-gold-cdn.xitu.io/2019/8/6/16c6590c733468f9?w=567&h=244&f=png&s=14427" alt>)<img src="https://user-gold-cdn.xitu.io/2019/8/6/16c6590f19426cd6?w=635&h=226&f=png&s=14108" alt></p>
 <p>三：在mongodb根目录下见一个配置文件，内容如下：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">dbpath=c:\MongoDb\data\db</span><br><span class="line">logpath=c:\MongoDB\data\log\mongolog.log</span><br><span class="line">logappend=true</span><br><span class="line">auth=false</span><br></pre></td></tr></table></figure>
 
@@ -42,8 +362,8 @@
   <entry>
     <title>VMWare 下安装Centos网络设置（局域网配置）</title>
     <url>/2019/10/14/VMWare%20%E4%B8%8B%E5%AE%89%E8%A3%85Centos%E7%BD%91%E7%BB%9C%E8%AE%BE%E7%BD%AE%EF%BC%88%E5%B1%80%E5%9F%9F%E7%BD%91%E9%85%8D%E7%BD%AE%EF%BC%89/</url>
-    <content><![CDATA[<p><strong>最近打算为centos安装一个界面时，发现不能上网。ping <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a> 报name or service not known。<br>原来网络配置没设好。</strong></p><h2 id="一、选择VMWare的NAT模式。"><a href="#一、选择VMWare的NAT模式。" class="headerlink" title="一、选择VMWare的NAT模式。"></a>一、选择VMWare的NAT模式。</h2><p>1）导航栏“编辑”-&gt;“虚拟网络编辑器” -&gt;NAT模式-&gt;NAT设置<br><img src="https://user-gold-cdn.xitu.io/2019/9/2/16cf15c295b06b40?w=655&h=743&f=png&s=58854" alt></p><a id="more"></a>
-
+    <content><![CDATA[<p><strong>最近打算为centos安装一个界面时，发现不能上网。ping <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a> 报name or service not known。<br>原来网络配置没设好。</strong></p><a id="more"></a>
+<h2 id="一、选择VMWare的NAT模式。"><a href="#一、选择VMWare的NAT模式。" class="headerlink" title="一、选择VMWare的NAT模式。"></a>一、选择VMWare的NAT模式。</h2><p>1）导航栏“编辑”-&gt;“虚拟网络编辑器” -&gt;NAT模式-&gt;NAT设置<br><img src="https://user-gold-cdn.xitu.io/2019/9/2/16cf15c295b06b40?w=655&h=743&f=png&s=58854" alt></p>
 <blockquote>
 <p>记住NAT设置中的子网IP、子网掩码、网关IP三项，接下来配置文件主要是这三项。<br> 嗯，这里记得按确定，我之前没有按确定写好配置后还是不行，不知道为什么。</p>
 </blockquote>
@@ -71,9 +391,9 @@
   <entry>
     <title>SSH 上传下载文件</title>
     <url>/2019/10/14/SSH%20%E4%B8%8A%E4%BC%A0%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6/</url>
-    <content><![CDATA[<h3 id="1、上传本地文件到服务器"><a href="#1、上传本地文件到服务器" class="headerlink" title="1、上传本地文件到服务器"></a>1、上传本地文件到服务器</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">scp /path/filename username@servername:/path/</span><br></pre></td></tr></table></figure><p>例如scp /var/www/test.php <a href="mailto:root@192.168.0.101" target="_blank" rel="noopener">root@192.168.0.101</a>:/var/www/ 把本机/var/www/目录下的test.php文件上传到192.168.0.101这台服务器上的/var/www/目录中</p><a id="more"></a>
+    <content><![CDATA[<h3 id="1、上传本地文件到服务器"><a href="#1、上传本地文件到服务器" class="headerlink" title="1、上传本地文件到服务器"></a>1、上传本地文件到服务器</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">scp /path/filename username@servername:/path/</span><br></pre></td></tr></table></figure><a id="more"></a>
 
-
+<p>例如scp /var/www/test.php <a href="mailto:root@192.168.0.101" target="_blank" rel="noopener">root@192.168.0.101</a>:/var/www/ 把本机/var/www/目录下的test.php文件上传到192.168.0.101这台服务器上的/var/www/目录中</p>
 <h3 id="2、从服务器上下载文件"><a href="#2、从服务器上下载文件" class="headerlink" title="2、从服务器上下载文件"></a>2、从服务器上下载文件</h3><p>下载文件我们经常使用wget，但是如果没有http服务，如何从服务器上下载文件呢？</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">scp username@servername:/path/filename /var/www/local_dir（本地目录）</span><br></pre></td></tr></table></figure>
 
@@ -99,8 +419,8 @@
   <entry>
     <title>centos 开放端口方法</title>
     <url>/2019/10/14/centos%20%E5%BC%80%E6%94%BE%E7%AB%AF%E5%8F%A3%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<p>最近在centos上部署了前端项目发现启动后无法通过ip进行访问，经查询原来是防火墙打开了，经过收集学习了相关的操作。</p><p>Centos升级到7之后，内置的防火墙已经从iptables变成了firewalld。所以，端口的开启还是要从两种情况来说明的，即iptables和firewalld。</p><a id="more"></a>
-
+    <content><![CDATA[<p>最近在centos上部署了前端项目发现启动后无法通过ip进行访问，经查询原来是防火墙打开了，经过收集学习了相关的操作。</p><a id="more"></a>
+<p>Centos升级到7之后，内置的防火墙已经从iptables变成了firewalld。所以，端口的开启还是要从两种情况来说明的，即iptables和firewalld。</p>
 <h3 id="一、iptables-centos-6及以前"><a href="#一、iptables-centos-6及以前" class="headerlink" title="一、iptables(centos 6及以前)"></a>一、iptables(centos 6及以前)</h3><p>1.打开/关闭/重启防火墙</p>
 <pre><code>开启防火墙(重启后永久生效)：  chkconfig iptables on
 关闭防火墙(重启后永久生效)：  chkconfig iptables off
@@ -140,14 +460,16 @@ vi /etc/sysconfig/iptables
   <entry>
     <title>Centos下部署Nginx前端项目</title>
     <url>/2019/10/12/Centos%E4%B8%8B%E9%83%A8%E7%BD%B2Nginx%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE/</url>
-    <content><![CDATA[<h3 id="一、下载"><a href="#一、下载" class="headerlink" title="一、下载"></a>一、下载</h3><p>centos7 直接只用</p><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">yum <span class="keyword">install</span> -y nginx</span><br></pre></td></tr></table></figure><h3 id="二、使用"><a href="#二、使用" class="headerlink" title="二、使用"></a>二、使用</h3><p>找到nginx安装位置，我的安装位置在/etc/nginx<br><img src="https://user-gold-cdn.xitu.io/2019/9/3/16cf60bafb8e1736?w=569&h=151&f=png&s=13891" alt><br>其中配置文件（nginx.config），我们可以指定端口 代理配置内容<br>###三、 启动<br>CentOS 7.5下启动 Nginx 出现如下错误：</p><a id="more"></a>
+    <content><![CDATA[<h3 id="一、下载"><a href="#一、下载" class="headerlink" title="一、下载"></a>一、下载</h3><p>centos7 直接只用</p><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">yum <span class="keyword">install</span> -y nginx</span><br></pre></td></tr></table></figure><h3 id="二、使用"><a href="#二、使用" class="headerlink" title="二、使用"></a>二、使用</h3><p>找到nginx安装位置，我的安装位置在/etc/nginx<br><img src="%5Cimages%5Cpasted-2.png" alt="upload successful"><br>其中配置文件（nginx.config），我们可以指定端口 代理配置内容</p><a id="more"></a>
 
 
 
+<h3 id="三、-启动"><a href="#三、-启动" class="headerlink" title="三、 启动"></a>三、 启动</h3><p>CentOS 7.5下启动 Nginx 出现如下错误：</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">nginx: [error] open() "/run/nginx.pid" failed (2: No such file or directory)</span><br></pre></td></tr></table></figure>
 
 <p>解决方法：找到你的nginx.conf的文件夹目录，然后运行类似如下命令</p>
 <h3 id="四、代理"><a href="#四、代理" class="headerlink" title="四、代理"></a>四、代理</h3><p>代理截图</p>
+<p><img src="/images/pasted-1.png" alt></p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">nginx -c etc/nginx/nginx.conf</span><br></pre></td></tr></table></figure>
 
 <p>再运行</p>
@@ -187,7 +509,7 @@ vi /etc/sysconfig/iptables
 </tr>
 <tr>
 <td>nginx -t</td>
-<td>不运行，而仅仅测试配置文件。nginx</td>
+<td>不运行，而仅仅测试配置文件。nginx将检查配置文件的语法的正确性，并尝试打开配置文件中所引用到的文件。</td>
 </tr>
 <tr>
 <td>nginx -v</td>
@@ -210,10 +532,10 @@ vi /etc/sysconfig/iptables
   <entry>
     <title>使用hexo+github搭建免费个人博客</title>
     <url>/2019/10/12/%E4%BD%BF%E7%94%A8hexo-github%E6%90%AD%E5%BB%BA%E5%85%8D%E8%B4%B9%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8hexo-github%E6%90%AD%E5%BB%BA%E5%85%8D%E8%B4%B9%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<h3 id="1-安装启动"><a href="#1-安装启动" class="headerlink" title="1.安装启动"></a>1.安装启动</h3><p>在GitBash 中操作，输入以下命令，等待安装完成。</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure><p>a.安装 hexo</p><a id="more"></a>
+    <content><![CDATA[<h3 id="1-安装启动"><a href="#1-安装启动" class="headerlink" title="1.安装启动"></a>1.安装启动</h3><p>在GitBash 中操作，输入以下命令，等待安装完成。</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure><a id="more"></a>
 
 
-
+<p>a.安装 hexo</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cnpm install -g hexo</span><br></pre></td></tr></table></figure>
 
 <p>b.初始化 hexo</p>
@@ -264,9 +586,9 @@ vi /etc/sysconfig/iptables
   <entry>
     <title>centos7 软件安装</title>
     <url>/2019/10/11/centos7%20%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/</url>
-    <content><![CDATA[<h3 id="1-安装Mysql"><a href="#1-安装Mysql" class="headerlink" title="1.安装Mysql"></a>1.安装Mysql</h3><p>在要安装的目录下执行一下命令 我这就是进入到/home/money/后执行以下命令</p><p>下载</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wget -i -c http://dev.mysql.com/get/mysql57-community-release-el7-10.noarch.rpm</span><br></pre></td></tr></table></figure><a id="more"></a>
+    <content><![CDATA[<h3 id="1-安装Mysql"><a href="#1-安装Mysql" class="headerlink" title="1.安装Mysql"></a>1.安装Mysql</h3><p>在要安装的目录下执行一下命令 我这就是进入到/home/money/后执行以下命令</p><p>下载</p><a id="more"></a>
 
-
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wget -i -c http://dev.mysql.com/get/mysql57-community-release-el7-10.noarch.rpm</span><br></pre></td></tr></table></figure>
 
 <p>yum 安装</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yum -y install mysql57-community-release-el7-10.noarch.rpm</span><br></pre></td></tr></table></figure>

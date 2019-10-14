@@ -55,21 +55,22 @@
   };
 </script>
 
-  <meta name="description" content="一、下载centos7 直接只用 1yum install -y nginx二、使用找到nginx安装位置，我的安装位置在/etc/nginx其中配置文件（nginx.config），我们可以指定端口 代理配置内容###三、 启动CentOS 7.5下启动 Nginx 出现如下错误：">
+  <meta name="description" content="一、下载centos7 直接只用1yum install -y nginx二、使用找到nginx安装位置，我的安装位置在/etc/nginx其中配置文件（nginx.config），我们可以指定端口 代理配置内容###三、 启动CentOS 7.5下启动 Nginx 出现如下错误：">
+<meta name="keywords" content="Centos,Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Centos下部署Nginx前端项目">
 <meta property="og:url" content="http://yoursite.com/2019/10/12/Centos下部署Nginx前端项目/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一、下载centos7 直接只用 1yum install -y nginx二、使用找到nginx安装位置，我的安装位置在/etc/nginx其中配置文件（nginx.config），我们可以指定端口 代理配置内容###三、 启动CentOS 7.5下启动 Nginx 出现如下错误：">
+<meta property="og:description" content="一、下载centos7 直接只用1yum install -y nginx二、使用找到nginx安装位置，我的安装位置在/etc/nginx其中配置文件（nginx.config），我们可以指定端口 代理配置内容###三、 启动CentOS 7.5下启动 Nginx 出现如下错误：">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/9/3/16cf60bafb8e1736?w=569&h=151&f=png&s=13891">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/9/3/16cf6091d086ffc4?w=549&h=594&f=png&s=39516">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/9/3/16cf60700837f339?w=782&h=269&f=png&s=27147">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/9/3/16cf610242204d16?w=640&h=611&f=png&s=39254">
-<meta property="og:updated_time" content="2019-10-12T06:53:59.830Z">
+<meta property="og:updated_time" content="2019-10-14T01:51:21.508Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Centos下部署Nginx前端项目">
-<meta name="twitter:description" content="一、下载centos7 直接只用 1yum install -y nginx二、使用找到nginx安装位置，我的安装位置在/etc/nginx其中配置文件（nginx.config），我们可以指定端口 代理配置内容###三、 启动CentOS 7.5下启动 Nginx 出现如下错误：">
+<meta name="twitter:description" content="一、下载centos7 直接只用1yum install -y nginx二、使用找到nginx安装位置，我的安装位置在/etc/nginx其中配置文件（nginx.config），我们可以指定端口 代理配置内容###三、 启动CentOS 7.5下启动 Nginx 出现如下错误：">
 <meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2019/9/3/16cf60bafb8e1736?w=569&h=151&f=png&s=13891">
   <link rel="canonical" href="http://yoursite.com/2019/10/12/Centos下部署Nginx前端项目/">
 
@@ -303,12 +304,37 @@
                 
               
 
-              <time title="创建时间：2019-10-12 14:50:44 / 修改时间：14:53:59" itemprop="dateCreated datePublished" datetime="2019-10-12T14:50:44+08:00">2019-10-12</time>
+              <time title="创建时间：2019-10-12 14:50:44" itemprop="dateCreated datePublished" datetime="2019-10-12T14:50:44+08:00">2019-10-12</time>
             </span>
           
             
 
             
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-10-14 09:51:21" itemprop="dateModified" datetime="2019-10-14T09:51:21+08:00">2019-10-14</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -322,13 +348,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="一、下载"><a href="#一、下载" class="headerlink" title="一、下载"></a>一、下载</h3><p>centos7 直接只用 </p><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum <span class="keyword">install</span> -y nginx</span><br></pre></td></tr></table></figure><h3 id="二、使用"><a href="#二、使用" class="headerlink" title="二、使用"></a>二、使用</h3><p>找到nginx安装位置，我的安装位置在/etc/nginx<br><img src="https://user-gold-cdn.xitu.io/2019/9/3/16cf60bafb8e1736?w=569&h=151&f=png&s=13891" alt><br>其中配置文件（nginx.config），我们可以指定端口 代理配置内容<br>###三、 启动<br>CentOS 7.5下启动 Nginx 出现如下错误：  </p><a id="more"></a>
+        <h3 id="一、下载"><a href="#一、下载" class="headerlink" title="一、下载"></a>一、下载</h3><p>centos7 直接只用</p><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum <span class="keyword">install</span> -y nginx</span><br></pre></td></tr></table></figure><h3 id="二、使用"><a href="#二、使用" class="headerlink" title="二、使用"></a>二、使用</h3><p>找到nginx安装位置，我的安装位置在/etc/nginx<br><img src="https://user-gold-cdn.xitu.io/2019/9/3/16cf60bafb8e1736?w=569&h=151&f=png&s=13891" alt><br>其中配置文件（nginx.config），我们可以指定端口 代理配置内容<br>###三、 启动<br>CentOS 7.5下启动 Nginx 出现如下错误：</p><a id="more"></a>
 
 
 
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx: [error] open() "/run/nginx.pid" failed (2: No such file or directory)</span><br></pre></td></tr></table></figure>
 
-<p>解决方法：找到你的nginx.conf的文件夹目录，然后运行类似如下命令  </p>
+<p>解决方法：找到你的nginx.conf的文件夹目录，然后运行类似如下命令</p>
 <h3 id="四、代理"><a href="#四、代理" class="headerlink" title="四、代理"></a>四、代理</h3><p>代理截图</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -c etc/nginx/nginx.conf</span><br></pre></td></tr></table></figure>
 
@@ -336,9 +362,9 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -s reload</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://user-gold-cdn.xitu.io/2019/9/3/16cf6091d086ffc4?w=549&h=594&f=png&s=39516" alt></p>
-<p>server下是配置内容 listen是具体的代理端口<br>server_name 是本地访问的端口这里项目启动的方式决定了我们代理的端口我们使用ip访问就需要配置一下这里的地址<br>location /api 就是指对应的前端访问的代理<br>例如  </p>
+<p>server下是配置内容 listen是具体的代理端口<br>server_name 是本地访问的端口这里项目启动的方式决定了我们代理的端口我们使用ip访问就需要配置一下这里的地址<br>location /api 就是指对应的前端访问的代理<br>例如</p>
 <p><img src="https://user-gold-cdn.xitu.io/2019/9/3/16cf60700837f339?w=782&h=269&f=png&s=27147" alt><br>我们访问的地址是 <a href="http://192.168.8.88/api/" target="_blank" rel="noopener">http://192.168.8.88/api/</a> 就会被代理到 <a href="http://sj.com/api" target="_blank" rel="noopener">http://sj.com/api</a></p>
-<p>当然代理也可以配置多个如下： </p>
+<p>当然代理也可以配置多个如下：</p>
 <p><img src="https://user-gold-cdn.xitu.io/2019/9/3/16cf610242204d16?w=640&h=611&f=png&s=39254" alt></p>
 <h3 id="五、nginx-常用命令"><a href="#五、nginx-常用命令" class="headerlink" title="五、nginx 常用命令"></a>五、nginx 常用命令</h3><table>
 <thead>
@@ -387,11 +413,53 @@
     
     
       
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="\2019\10\14\SSH 上传下载文件\" rel="bookmark">SSH 上传下载文件</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="\2019\10\11\centos7 软件安装\" rel="bookmark">centos7 软件安装</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="\2019\10\14\centos 开放端口方法\" rel="bookmark">centos 开放端口方法</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="\2019\10\11\玩转Linux操作系统\" rel="bookmark">玩转Linux操作系统</a></div>
+      
+    </li>
+  
+  </ul>
 
         
       
 
       <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/Centos/" rel="tag"># Centos</a>
+            
+              <a href="/tags/Linux/" rel="tag"># Linux</a>
+            
+          </div>
+        
 
         
 
@@ -407,6 +475,10 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/10/14/centos 开放端口方法/" rel="prev" title="centos 开放端口方法">
+                  centos 开放端口方法 <i class="fa fa-chevron-right"></i>
+                </a>
               
             </div>
           </div>
@@ -471,7 +543,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -484,7 +556,7 @@
             <a href="/categories/">
           
         
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分类</span>
         </a>
       </div>
@@ -497,7 +569,7 @@
             <a href="/tags/">
           
         
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>

@@ -1,15 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Win10安装Mongodb，并配置成服务</title>
+    <url>/2019/10/14/Win10%E5%AE%89%E8%A3%85Mongodb%EF%BC%8C%E5%B9%B6%E9%85%8D%E7%BD%AE%E6%88%90%E6%9C%8D%E5%8A%A1/Win10%E5%AE%89%E8%A3%85Mongodb%EF%BC%8C%E5%B9%B6%E9%85%8D%E7%BD%AE%E6%88%90%E6%9C%8D%E5%8A%A1/</url>
+    <content><![CDATA[<p>一：先去官网下载对应的版本;<br>二：把bin文件夹拷贝到跟MongoDB目录，然后在根目录下建一个data文件夹存放日志跟数据库，然后data文件夹下建db跟log文件夹，并在log文件夹下新建一个日志文件mongolog.log，如下</p><a id="more"></a>
+<p>图所示：<br><img src="https://user-gold-cdn.xitu.io/2019/8/6/16c659090f8ce681?w=516&h=304&f=png&s=17920" alt>)<img src="https://user-gold-cdn.xitu.io/2019/8/6/16c6590c733468f9?w=567&h=244&f=png&s=14427" alt>)<img src="https://user-gold-cdn.xitu.io/2019/8/6/16c6590f19426cd6?w=635&h=226&f=png&s=14108" alt></p>
+<p>三：在mongodb根目录下见一个配置文件，内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">dbpath=c:\MongoDb\data\db</span><br><span class="line">logpath=c:\MongoDB\data\log\mongolog.log</span><br><span class="line">logappend=true</span><br><span class="line">auth=false</span><br></pre></td></tr></table></figure>
+
+<p>这就是mongodb.config文件的内容，auth默认为false，不起用密码验证</p>
+<p>四：powershell管理员模式定位到bin目录，然后运行</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">.\mongod --config c:\MongoDB\mongodb.config --serviceName MongoDB --install</span><br></pre></td></tr></table></figure>
+
+<p> 这样，服务就安装完了，然后在服务那块右键启动服务，这样mongodb就算安装好了，接下来要设置密码</p>
+<p>五.当mongod.exe被关闭时，mongo.exe 就无法连接到数据库了，因此每次想使用mongodb数据库都要开启mongod.exe程序，所以比较麻烦，此时我们可以将MongoDB安装为windows服务</p>
+<p>　还是运行cmd，进入bin文件夹，执行下列命令</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"> d:\mongodb\bin&gt;mongod --dbpath <span class="string">"d:\mongodb\data\db"</span> --logpath <span class="string">"d:\mongodb\data\log\MongoDB.log"</span></span></span><br><span class="line">  --install --serviceName "MongoDB"</span><br></pre></td></tr></table></figure>
+
+<p>这里MongoDB.log就是开始建立的日志文件，–serviceName “MongoDB” 服务名为MongoDB<br>接着启动mongodb服务</p>
+<h3 id="六-关闭服务和删除进程"><a href="#六-关闭服务和删除进程" class="headerlink" title="六.关闭服务和删除进程"></a>六.关闭服务和删除进程</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"> d:\mongodb\bin&gt;NET stop MongoDB   (关闭服务)</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> d:\mongodb\bin&gt;mongod --dbpath <span class="string">"d:\mongodb\data\db"</span> --logpath <span class="string">"d:\mongodb\data\log\MongoDB.log"</span> --remove --serviceName <span class="string">"MongoDB"</span></span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>(删除，注意不是–install了)</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>mongodb</category>
+      </categories>
+      <tags>
+        <tag>win10</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Centos7.4安装镜像源和repo源</title>
+    <url>/2019/10/14/Centos7.4%E5%AE%89%E8%A3%85%E9%95%9C%E5%83%8F%E6%BA%90%E5%92%8Crepo%E6%BA%90/</url>
+    <content><![CDATA[<h3 id="一、国内可选下载镜像源"><a href="#一、国内可选下载镜像源" class="headerlink" title="一、国内可选下载镜像源"></a>一、国内可选下载镜像源</h3><h4 id="1、国内"><a href="#1、国内" class="headerlink" title="1、国内"></a>1、国内</h4><p>163镜像源（推荐选择）<br><a href="http://mirrors.163.com/" target="_blank" rel="noopener">http://mirrors.163.com/</a><br>中国技术科学大学<br><a href="http://mirrors.ustc.edu.cn/" target="_blank" rel="noopener">http://mirrors.ustc.edu.cn/</a><br>Centos官方站点<br><a href="http://vault.centos.org/" target="_blank" rel="noopener">http://vault.centos.org/</a>  </p><a id="more"></a>
+<h4 id="2、Centos7-4下载地址"><a href="#2、Centos7-4下载地址" class="headerlink" title="2、Centos7.4下载地址"></a>2、Centos7.4下载地址</h4><p><a href="http://mirrors.163.com/centos/7.4.1708/isos/x86_64/CentOS-7-x86_64-DVD-1708.iso" target="_blank" rel="noopener">http://mirrors.163.com/centos/7.4.1708/isos/x86_64/CentOS-7-x86_64-DVD-1708.iso</a></p>
+<h3 id="二、配置Centos7-4的yum源"><a href="#二、配置Centos7-4的yum源" class="headerlink" title="二、配置Centos7.4的yum源"></a>二、配置Centos7.4的yum源</h3><h4 id="yum所需要使用的repo源如下："><a href="#yum所需要使用的repo源如下：" class="headerlink" title="yum所需要使用的repo源如下："></a>yum所需要使用的repo源如下：</h4><p>在安装好的操作系统中，执行如下命令：<br>vim /etc/yum.repos.d/CentOS-163.repo</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span> geographically close to the client.  You should use this for CentOS updates</span><br><span class="line"><span class="meta">#</span> unless you are manually picking other mirrors.</span><br><span class="line"><span class="meta">#</span> </span><br><span class="line"><span class="meta">#</span> If the mirrorlist= does not work for you, as a fall back you can try the </span><br><span class="line"><span class="meta">#</span> remarked out baseurl= line instead.</span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta">#</span> Jeson@imoocc.com</span><br><span class="line">[base]</span><br><span class="line">name=CentOS-$releasever - Base - 163.com</span><br><span class="line"><span class="meta">#</span>mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=os</span><br><span class="line">baseurl=http://mirrors.163.com/centos/$releasever/os/$basearch/</span><br><span class="line">gpgcheck=1</span><br><span class="line">gpgkey=http://mirrors.163.com/centos/RPM-GPG-KEY-CentOS-7</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span>released updates</span><br><span class="line">[updates]</span><br><span class="line">name=CentOS-$releasever - Updates - 163.com</span><br><span class="line"><span class="meta">#</span>mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=updates</span><br><span class="line">baseurl=http://mirrors.163.com/centos/$releasever/updates/$basearch/</span><br><span class="line">gpgcheck=1</span><br><span class="line">gpgkey=http://mirrors.163.com/centos/RPM-GPG-KEY-CentOS-7</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span>additional packages that may be useful</span><br><span class="line">[extras]</span><br><span class="line">name=CentOS-$releasever - Extras - 163.com</span><br><span class="line"><span class="meta">#</span>mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=extras</span><br><span class="line">baseurl=http://mirrors.163.com/centos/$releasever/extras/$basearch/</span><br><span class="line">gpgcheck=1</span><br><span class="line">gpgkey=http://mirrors.163.com/centos/RPM-GPG-KEY-CentOS-7</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span>additional packages that extend functionality of existing packages</span><br><span class="line">[centosplus]</span><br><span class="line">name=CentOS-$releasever - Plus - 163.com</span><br><span class="line">baseurl=http://mirrors.163.com/centos/$releasever/centosplus/$basearch/</span><br><span class="line">gpgcheck=1</span><br><span class="line">enabled=0</span><br><span class="line">gpgkey=http://mirrors.163.com/centos/RPM-GPG-KEY-CentOS-7</span><br></pre></td></tr></table></figure>]]></content>
+  </entry>
+  <entry>
+    <title>VMWare 下安装Centos网络设置（局域网配置）</title>
+    <url>/2019/10/14/VMWare%20%E4%B8%8B%E5%AE%89%E8%A3%85Centos%E7%BD%91%E7%BB%9C%E8%AE%BE%E7%BD%AE%EF%BC%88%E5%B1%80%E5%9F%9F%E7%BD%91%E9%85%8D%E7%BD%AE%EF%BC%89/</url>
+    <content><![CDATA[<p><strong>最近打算为centos安装一个界面时，发现不能上网。ping <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a> 报name or service not known。<br>原来网络配置没设好。</strong></p><h2 id="一、选择VMWare的NAT模式。"><a href="#一、选择VMWare的NAT模式。" class="headerlink" title="一、选择VMWare的NAT模式。"></a>一、选择VMWare的NAT模式。</h2><p>1）导航栏“编辑”-&gt;“虚拟网络编辑器” -&gt;NAT模式-&gt;NAT设置<br><img src="https://user-gold-cdn.xitu.io/2019/9/2/16cf15c295b06b40?w=655&h=743&f=png&s=58854" alt></p><a id="more"></a>
+
+<blockquote>
+<p>记住NAT设置中的子网IP、子网掩码、网关IP三项，接下来配置文件主要是这三项。<br> 嗯，这里记得按确定，我之前没有按确定写好配置后还是不行，不知道为什么。</p>
+</blockquote>
+<p> 2）编辑网络配置文件。<br>    我的是ens33，不同的人或许会有不同。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vi /etc/sysconfig/network-scripts/ifcfg-ens33</span><br></pre></td></tr></table></figure>
+
+<p>我的是这样的。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/9/2/16cf15d9452c028d?w=658&h=248&f=png&s=18226" alt></p>
+<p>打开配置文件后，按“i”进行编辑</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/9/2/16cf15df2d2f7859?w=406&h=432&f=png&s=25896" alt></p>
+<p>更改完后，按“ESC”键，然后输入”:wq”。意思是退出并保存。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">service network restart</span><br></pre></td></tr></table></figure>
+
+<p>接下来就可以愉快的 ping <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a></p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/9/2/16cf15fc53252356?w=666&h=227&f=png&s=19065" alt></p>
+<p>3)附文件代码</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">TYPE=Ethernet</span><br><span class="line">BOOTPROTO=static  #启用静态IP地址</span><br><span class="line">DEFROUTE=yes</span><br><span class="line">PEERDNS=yes</span><br><span class="line">PEERROUTES=yes</span><br><span class="line">IPV4_FAILURE_FATAL=no</span><br><span class="line">IPV6INIT=yes</span><br><span class="line">IPV6_AUTOCONF=yes</span><br><span class="line">IPV6_DEFROUTE=yes</span><br><span class="line">IPV6_PEERDNS=yes</span><br><span class="line">IPV6_PEERROUTES=yes</span><br><span class="line">IPV6_FAILURE_FATAL=no</span><br><span class="line">NAME=eno16777736</span><br><span class="line">UUID=ae0965e7<span class="number">-22</span>b9<span class="number">-45</span>aa<span class="number">-8</span>ec9<span class="number">-3</span>f0a20a85d11</span><br><span class="line">ONBOOT=yes  #开启自动启用网络连接</span><br><span class="line">IPADDR=192.168.8.88  #设置IP地址</span><br><span class="line">NETMASK=255.255.255.0  #设置子网掩码</span><br><span class="line">GATEWAY=192.168.8.254  #设置网关</span><br><span class="line">DNS1=192.168.1.2 #设置主DNS</span><br><span class="line">DNS2=192.168.1.3 #设置备DNS</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Centos</category>
+      </categories>
+      <tags>
+        <tag>vm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SSH 上传下载文件</title>
+    <url>/2019/10/14/SSH%20%E4%B8%8A%E4%BC%A0%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6/</url>
+    <content><![CDATA[<h3 id="1、上传本地文件到服务器"><a href="#1、上传本地文件到服务器" class="headerlink" title="1、上传本地文件到服务器"></a>1、上传本地文件到服务器</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">scp /path/filename username@servername:/path/</span><br></pre></td></tr></table></figure><p>例如scp /var/www/test.php <a href="mailto:root@192.168.0.101" target="_blank" rel="noopener">root@192.168.0.101</a>:/var/www/ 把本机/var/www/目录下的test.php文件上传到192.168.0.101这台服务器上的/var/www/目录中</p><a id="more"></a>
+
+
+<h3 id="2、从服务器上下载文件"><a href="#2、从服务器上下载文件" class="headerlink" title="2、从服务器上下载文件"></a>2、从服务器上下载文件</h3><p>下载文件我们经常使用wget，但是如果没有http服务，如何从服务器上下载文件呢？</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">scp username@servername:/path/filename /var/www/local_dir（本地目录）</span><br></pre></td></tr></table></figure>
+
+<p>例如scp <a href="mailto:root@192.168.0.101" target="_blank" rel="noopener">root@192.168.0.101</a>:/var/www/test.txt 把192.168.0.101上的/var/www/test.txt 的文件下载到/var/www/local_dir（本地目录）</p>
+<h3 id="3、从服务器下载整个目录"><a href="#3、从服务器下载整个目录" class="headerlink" title="3、从服务器下载整个目录"></a>3、从服务器下载整个目录</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">scp -r username@servername:/var/www/remote_dir/（远程目录） /var/www/local_dir（本地目录）</span><br></pre></td></tr></table></figure>
+
+<p>例如:scp -r <a href="mailto:root@192.168.0.101" target="_blank" rel="noopener">root@192.168.0.101</a>:/var/www/test /var/www/</p>
+<h3 id="4、上传目录到服务器"><a href="#4、上传目录到服务器" class="headerlink" title="4、上传目录到服务器"></a>4、上传目录到服务器</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">scp -r local_dir username@servername:remote_dir</span><br></pre></td></tr></table></figure>
+
+<p>例如：scp -r ui <a href="mailto:root@192.168.8.88" target="_blank" rel="noopener">root@192.168.8.88</a>:/var/share/nginx/ (ui 桌面文件，/var/share/nginx/远程文件 );</p>
+<blockquote>
+<p>上传的时候应该断开连接SSH 会提示输入密码</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Centos</tag>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>centos 开放端口方法</title>
+    <url>/2019/10/14/centos%20%E5%BC%80%E6%94%BE%E7%AB%AF%E5%8F%A3%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<p>最近在centos上部署了前端项目发现启动后无法通过ip进行访问，经查询原来是防火墙打开了，经过收集学习了相关的操作。</p><p>Centos升级到7之后，内置的防火墙已经从iptables变成了firewalld。所以，端口的开启还是要从两种情况来说明的，即iptables和firewalld。</p><a id="more"></a>
+
+<h3 id="一、iptables-centos-6及以前"><a href="#一、iptables-centos-6及以前" class="headerlink" title="一、iptables(centos 6及以前)"></a>一、iptables(centos 6及以前)</h3><p>1.打开/关闭/重启防火墙</p>
+<pre><code>开启防火墙(重启后永久生效)：  chkconfig iptables on
+关闭防火墙(重启后永久生效)：  chkconfig iptables off
+开启防火墙(即时生效，重启后失效)：  service iptables start
+关闭防火墙(即时生效，重启后失效)：  service iptables stop
+重启防火墙:  service iptables restartd</code></pre><p>2.查看打开的端口</p>
+<pre><code>/etc/init.d/iptables status</code></pre><p>3.打开某个端口(以8080为例)</p>
+<pre><code>（1）开启端口
+iptables -A INPUT -p tcp --dport 8080 -j ACCEPT
+（2）保存并重启防火墙
+/etc/rc.d/init.d/iptables save
+/etc/init.d/iptables restart</code></pre><p>4.打开49152~65534之间的端口</p>
+<pre><code>iptables -A INPUT -p tcp --dport 49152:65534 -j ACCEPT
+同样，这里需要对设置进行保存，并重启防火墙。</code></pre><p>5.其他打开方式</p>
+<pre><code>我们还可以通过修改/etc/sysconfig/iptables文件的方式开启端口，如下
+vi /etc/sysconfig/iptables
+然后在文件中增加一行
+-A RH-Firewall-1-INPUT -m state –state NEW -m tcp -p tcp –dport 8080 -j ACCEPT</code></pre><p>6.查看启动端口</p>
+<pre><code>netstat  -nultp</code></pre><p>7.查看是否开启某个端口</p>
+<pre><code>netstat  -anp  |grep  8000</code></pre><p>参数说明:</p>
+<ul>
+<li>-A 参数就看成是添加一条规则</li>
+<li>–p 指定是什么协议，我们常用的tcp 协议，当然也有udp，例如53端口的DNS</li>
+<li>–dport 就是目标端口，当数据从外部进入服务器为目标端口</li>
+<li>–sport 数据从服务器出去，则为数据源端口使用</li>
+<li>–j 就是指定是 ACCEPT -接收 或者 DROP 不接收</li>
+</ul>
+<h3 id="二、firewalld-centos7"><a href="#二、firewalld-centos7" class="headerlink" title="二、firewalld(centos7)"></a>二、firewalld(centos7)</h3><p>Centos7默认安装了firewalld，如果没有安装的话，可以使用 yum install firewalld firewalld-config进行安装。<br>|命令|解释|<br>|-|-|<br>|1.启动防火墙|systemctl start firewalld |<br>|2.禁用防火墙|systemctl stop firewalld|<br>|3.设置开机启动|systemctl enable firewalld|<br>|4.停止并禁用开机启动|sytemctl disable firewalld|<br>|5.重启防火墙|firewall-cmd –reload|<br>|6.查看状态|systemctl status firewalld或者 firewall-cmd –state|<br>|7.查看版本|firewall-cmd –version|<br>|8.查看帮助|firewall-cmd –help|<br>|9.查看区域信息|firewall-cmd –get-active-zones|<br>|10.查看指定接口所属区域信息|firewall-cmd –get-zone-of-interface=eth0|<br>|11.拒绝所有包|firewall-cmd –panic-on|<br>|12.取消拒绝状态|firewall-cmd –panic-off|<br>|13.查看是否拒绝|firewall-cmd –query-panic|<br>|14.将接口添加到区域(默认接口都在public)|firewall-cmd –zone=public –add-interface=eth0(永久生效再加上 –permanent 然后reload防火墙)|<br>|15.设置默认接口区域|firewall-cmd –set-default-zone=public(立即生效，无需重启)|<br>|16.更新防火墙规则|firewall-cmd –reload或firewall-cmd –complete-reload(两者的区别就是第一个无需断开连接，就是firewalld特性之一动态添加规则，第二个需要断开连接，类似重启服务)|<br>|17.查看指定区域所有打开的端口|firewall-cmd –zone=public –list-ports|<br>|18.在指定区域打开端口（记得重启防火墙）|firewall-cmd –zone=public –add-port=80/tcp(永久生效再加上 –permanent)|</p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Centos下部署Nginx前端项目</title>
     <url>/2019/10/12/Centos%E4%B8%8B%E9%83%A8%E7%BD%B2Nginx%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE/</url>
-    <content><![CDATA[<h3 id="一、下载"><a href="#一、下载" class="headerlink" title="一、下载"></a>一、下载</h3><p>centos7 直接只用 </p><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">yum <span class="keyword">install</span> -y nginx</span><br></pre></td></tr></table></figure><h3 id="二、使用"><a href="#二、使用" class="headerlink" title="二、使用"></a>二、使用</h3><p>找到nginx安装位置，我的安装位置在/etc/nginx<br><img src="https://user-gold-cdn.xitu.io/2019/9/3/16cf60bafb8e1736?w=569&h=151&f=png&s=13891" alt><br>其中配置文件（nginx.config），我们可以指定端口 代理配置内容<br>###三、 启动<br>CentOS 7.5下启动 Nginx 出现如下错误：  </p><a id="more"></a>
+    <content><![CDATA[<h3 id="一、下载"><a href="#一、下载" class="headerlink" title="一、下载"></a>一、下载</h3><p>centos7 直接只用</p><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">yum <span class="keyword">install</span> -y nginx</span><br></pre></td></tr></table></figure><h3 id="二、使用"><a href="#二、使用" class="headerlink" title="二、使用"></a>二、使用</h3><p>找到nginx安装位置，我的安装位置在/etc/nginx<br><img src="https://user-gold-cdn.xitu.io/2019/9/3/16cf60bafb8e1736?w=569&h=151&f=png&s=13891" alt><br>其中配置文件（nginx.config），我们可以指定端口 代理配置内容<br>###三、 启动<br>CentOS 7.5下启动 Nginx 出现如下错误：</p><a id="more"></a>
 
 
 
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">nginx: [error] open() "/run/nginx.pid" failed (2: No such file or directory)</span><br></pre></td></tr></table></figure>
 
-<p>解决方法：找到你的nginx.conf的文件夹目录，然后运行类似如下命令  </p>
+<p>解决方法：找到你的nginx.conf的文件夹目录，然后运行类似如下命令</p>
 <h3 id="四、代理"><a href="#四、代理" class="headerlink" title="四、代理"></a>四、代理</h3><p>代理截图</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">nginx -c etc/nginx/nginx.conf</span><br></pre></td></tr></table></figure>
 
@@ -17,9 +154,9 @@
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">nginx -s reload</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://user-gold-cdn.xitu.io/2019/9/3/16cf6091d086ffc4?w=549&h=594&f=png&s=39516" alt></p>
-<p>server下是配置内容 listen是具体的代理端口<br>server_name 是本地访问的端口这里项目启动的方式决定了我们代理的端口我们使用ip访问就需要配置一下这里的地址<br>location /api 就是指对应的前端访问的代理<br>例如  </p>
+<p>server下是配置内容 listen是具体的代理端口<br>server_name 是本地访问的端口这里项目启动的方式决定了我们代理的端口我们使用ip访问就需要配置一下这里的地址<br>location /api 就是指对应的前端访问的代理<br>例如</p>
 <p><img src="https://user-gold-cdn.xitu.io/2019/9/3/16cf60700837f339?w=782&h=269&f=png&s=27147" alt><br>我们访问的地址是 <a href="http://192.168.8.88/api/" target="_blank" rel="noopener">http://192.168.8.88/api/</a> 就会被代理到 <a href="http://sj.com/api" target="_blank" rel="noopener">http://sj.com/api</a></p>
-<p>当然代理也可以配置多个如下： </p>
+<p>当然代理也可以配置多个如下：</p>
 <p><img src="https://user-gold-cdn.xitu.io/2019/9/3/16cf610242204d16?w=640&h=611&f=png&s=39254" alt></p>
 <h3 id="五、nginx-常用命令"><a href="#五、nginx-常用命令" class="headerlink" title="五、nginx 常用命令"></a>五、nginx 常用命令</h3><table>
 <thead>
@@ -62,6 +199,13 @@
 </tr>
 </tbody></table>
 ]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Centos</tag>
+        <tag>Linux</tag>
+      </tags>
   </entry>
   <entry>
     <title>使用hexo+github搭建免费个人博客</title>
@@ -86,6 +230,9 @@
 
 <p>d.创建文章</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new "我的第一篇博客"</span><br><span class="line"></span><br><span class="line">//或者可以简写为</span><br><span class="line"></span><br><span class="line">hexo n "我的第一篇博客"</span><br></pre></td></tr></table></figure>
+
+<p>e.创建文件夹</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo n [我的第一篇博客] 我的第一篇博客</span><br></pre></td></tr></table></figure>
 
 <h3 id="2-上传到github"><a href="#2-上传到github" class="headerlink" title="2.上传到github"></a>2.上传到github</h3><p>a.配置站点配置文件<br>1.打开根目录下站点配置文件_config.yml，配置有关deploy的部分：</p>
 
